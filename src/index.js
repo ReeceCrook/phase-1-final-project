@@ -5,17 +5,17 @@ const searchDropdown = document.querySelector('#searchDropdown')
 const resultContainer = document.querySelector('.resultContainer')
 
 colorToggle.addEventListener("click", function(){
-  let body = document.body
+  const body = document.body
   body.classList.toggle("dark-mode")
 })
 
 function dropDownHandler(event, name){
-  let tabcontent = document.getElementsByClassName('tabcontent')
+  const tabcontent = document.getElementsByClassName('tabcontent')
   for (let i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = 'none'
   }
 
-  let tablinks = document.getElementsByClassName('tablinks')
+  const tablinks = document.getElementsByClassName('tablinks')
   for (let i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(' active', '')
   }
@@ -24,7 +24,7 @@ function dropDownHandler(event, name){
   event.currentTarget.className += ' active'
 }
 
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', (e) => {
   e.preventDefault()
   resultContainer.querySelectorAll('.picResult').forEach(e => e.remove())
   resultContainer.querySelectorAll('.noPicResult').forEach(e => e.remove())
@@ -44,13 +44,12 @@ form.addEventListener('submit', function(e){
   }
 })
 
-searchDropdown.addEventListener('change', function(){
+searchDropdown.addEventListener('change', () => {
   const p = document.querySelector('.dropText')
-
   if (searchDropdown.value === searchDropdown[0].value) {
-    p.textContent = 'Your search will return Shows/Movies based off of what you search'
+    p.textContent = 'Your search will return Shows/Movies'
   } else {
-    p.textContent = 'Your search will return Actors/Actresses based off of what you search'
+    p.textContent = 'Your search will return Actors/Actresses'
   }
 })
 
@@ -142,6 +141,4 @@ function favButtonHandler(){
       }
     }
   }
-
 }
-

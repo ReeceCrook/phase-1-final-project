@@ -1,6 +1,6 @@
 
 body {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.712);
   color: black;
 }
 
@@ -15,7 +15,6 @@ body {
   background-color: inherit;
 }
 
-/* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: inherit;
   float: left;
@@ -26,17 +25,10 @@ body {
   transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -49,7 +41,6 @@ body {
   font-style: italic;
   font-size:x-large
 }
-
 
 .picResult {
   outline: auto;
