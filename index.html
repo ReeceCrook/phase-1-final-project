@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <h1>Welcome To My Film Finder</h1>
+        <script src="./src/index.js" defer></script>
+        <link rel="stylesheet" href="./src/main.css"></link>
+        <title>Film Finder</title>
+        <button id="colorToggle">Dark/Light Mode</button>
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablinks" onclick="dropDownHandler(event, 'Home')">Home</button>
+            <button class="tablinks" onclick="dropDownHandler(event, 'Favorite')">Favorite</button>
+            <div id="Home" class="tabcontent">
+                <h3 class="innerTabTitle">Home</h3>
+                <select name="searchType" id="searchDropdown">
+                  <option value="singleSearch">Show/Movie Search</option>
+                  <option value="peopleSearch">People Search</option>
+                </select>
+                <p class="dropText">Your search will return Shows/Movies based off of what you search</p>
+                <form action="submit">
+                  <input type="text" placeholder="Search.." id="search">
+                  <input type="submit" value="submit">
+                </form>
+                <div class="resultContainer">
+                </div>
+              </div>
+              <div id="Favorite" class="tabcontent">
+                <h3 class="innerTabTitle">Favorite</h3>
+                <p>Your favorited results will appear here:</p>
+                <div class="favContainer">
+                </div>
+              </div>
+          </div>
+    </body>
+</html>
