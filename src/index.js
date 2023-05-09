@@ -5,8 +5,8 @@ const searchDropdown = document.querySelector('#searchDropdown')
 const resultContainer = document.querySelector('.resultContainer')
 
 colorToggle.addEventListener("click", function(){
-  let element = document.body
-  element.classList.toggle("dark-mode")
+  let body = document.body
+  body.classList.toggle("dark-mode")
 })
 
 function dropDownHandler(event, name){
@@ -23,6 +23,36 @@ function dropDownHandler(event, name){
   document.getElementById(name).style.display = 'block'
   event.currentTarget.className += ' active'
 }
+
+form.addEventListener('submit', function(e){
+  e.preventDefault()
+  resultContainer.querySelectorAll('.picResult').forEach(e => e.remove())
+  resultContainer.querySelectorAll('.noPicResult').forEach(e => e.remove())
+  const search = document.querySelector("#search")
+  if (searchDropdown.value === searchDropdown[0].value) {
+    fetch(`https://api.tvmaze.com/search/shows?q=${search.value}`)
+      .then(function (response) {
+        return response.json()
+      })
+      .then(res => res.forEach(data => renderSearch(data)))
+  } else {
+    fetch(`https://api.tvmaze.com/search/people?q=${search.value}`)
+      .then(function (response) {
+        return response.json()
+      })
+      .then(res => res.forEach(data => renderSearch(data)))
+  }
+})
+
+searchDropdown.addEventListener('change', function(){
+  const p = document.querySelector('.dropText')
+
+  if (searchDropdown.value === searchDropdown[0].value) {
+    p.textContent = 'Your search will return Shows/Movies based off of what you search'
+  } else {
+    p.textContent = 'Your search will return Actors/Actresses based off of what you search'
+  }
+})
 
 function renderSearch(data){
   const ul = document.createElement('ul')
@@ -91,36 +121,6 @@ function renderSearch(data){
     }
   }
 }
-
-form.addEventListener('submit', function(e){
-  e.preventDefault()
-  resultContainer.querySelectorAll('.picResult').forEach(e => e.remove())
-  resultContainer.querySelectorAll('.noPicResult').forEach(e => e.remove())
-  const search = document.querySelector("#search")
-  if (searchDropdown.value === searchDropdown[0].value) {
-    fetch(`https://api.tvmaze.com/search/shows?q=${search.value}`)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(res => res.forEach(data => renderSearch(data)))
-  } else {
-    fetch(`https://api.tvmaze.com/search/people?q=${search.value}`)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(res => res.forEach(data => renderSearch(data)))
-  }
-})
-
-searchDropdown.addEventListener('change', function(){
-  const p = document.querySelector('.dropText')
-
-  if (searchDropdown.value === searchDropdown[0].value) {
-    p.innerHTML = 'Your search will return Shows/Movies based off of what you search'
-  } else {
-    p.innerHTML = 'Your search will return Actors/Actresses based off of what you search'
-  }
-})
 
 function favButtonHandler(){
   const result = resultContainer.querySelectorAll('#result')
