@@ -17,7 +17,7 @@ function dropDownHandler(event, name){
 
   const tablinks = document.getElementsByClassName('tablinks')
   for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(' active', '')
+    tablinks[i].className = tablinks[i].className.replace('active', '')
   }
 
   document.getElementById(name).style.display = 'block'
@@ -26,9 +26,9 @@ function dropDownHandler(event, name){
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
+  const search = document.querySelector("#search")
   resultContainer.querySelectorAll('.picResult').forEach(e => e.remove())
   resultContainer.querySelectorAll('.noPicResult').forEach(e => e.remove())
-  const search = document.querySelector("#search")
   if (searchDropdown.value === searchDropdown[0].value) {
     fetch(`https://api.tvmaze.com/search/shows?q=${search.value}`)
       .then(function (response) {
@@ -129,7 +129,6 @@ function favButtonHandler(){
       if(result[i].querySelector('.favButton') === this){
         this.textContent = "Unfavorite"
         favContainer.appendChild(result[i])
-        return
       }
     }
   }else{
@@ -137,7 +136,6 @@ function favButtonHandler(){
       if(favResults[i].querySelector('.favButton') === this){
         this.textContent = "Favorite"
         resultContainer.appendChild(favResults[i])
-        return
       }
     }
   }

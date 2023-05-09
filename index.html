@@ -9,9 +9,9 @@
     </head>
     <body>
         <div class="tab">
-            <button class="tablinks" onclick="dropDownHandler(event, 'Home')">Home</button>
-            <button class="tablinks" onclick="dropDownHandler(event, 'Favorite')">Favorite</button>
-            <div id="Home" class="tabcontent">
+            <button class="tablinks" onclick="dropDownHandler(event, 'home')">Home</button>
+            <button class="tablinks" onclick="dropDownHandler(event, 'favorite')">Favorite</button>
+            <div id="home" class="tabcontent">
                 <h3 class="innerTabTitle">Home</h3>
                 <select name="searchType" id="searchDropdown">
                   <option value="singleSearch">Show/Movie Search</option>
@@ -19,13 +19,13 @@
                 </select>
                 <p class="dropText">Your search will return Shows/Movies</p>
                 <form action="submit">
-                  <input type="text" placeholder="Search.." id="search">
+                  <input type="text" placeholder="Search..." id="search">
                   <input type="submit" value="submit">
                 </form>
                 <div class="resultContainer">
                 </div>
               </div>
-              <div id="Favorite" class="tabcontent">
+              <div id="favorite" class="tabcontent">
                 <h3 class="innerTabTitle">Favorite</h3>
                 <p>Your favorited results will appear here:</p>
                 <div class="favContainer">
