@@ -9,21 +9,6 @@ darkMode.addEventListener("click", function(){
   body.classList.toggle("dark-mode")
 })
 
-function dropDownHandler(event, name){
-  const tabcontent = document.getElementsByClassName('tabcontent')
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = 'none'
-  }
-
-  const tablinks = document.getElementsByClassName('tablinks')
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace('active', '')
-  }
-
-  document.getElementById(name).style.display = 'block'
-  event.currentTarget.className += ' active'
-}
-
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   const search = document.querySelector("#search")
@@ -52,6 +37,21 @@ searchDropdown.addEventListener('change', () => {
     p.textContent = 'Your search will return Actors/Actresses'
   }
 })
+
+function dropDownHandler(event, name){
+  const tabcontent = document.getElementsByClassName('tabcontent')
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none'
+  }
+
+  const tablinks = document.getElementsByClassName('tablinks')
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace('active', '')
+  }
+
+  document.getElementById(name).style.display = 'block'
+  event.currentTarget.className += ' active'
+}
 
 function renderSearch(data){
   const ul = document.createElement('ul')
@@ -140,3 +140,4 @@ function favButtonHandler(){
     }
   }
 }
+
