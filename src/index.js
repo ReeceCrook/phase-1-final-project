@@ -1,10 +1,10 @@
 const form = document.querySelector('form')
-const colorToggle = document.querySelector('#colorToggle')
+const darkMode = document.querySelector('#darkMode')
 const favContainer = document.querySelector(".favContainer")
 const searchDropdown = document.querySelector('#searchDropdown')
 const resultContainer = document.querySelector('.resultContainer')
 
-colorToggle.addEventListener("click", function(){
+darkMode.addEventListener("click", function(){
   const body = document.body
   body.classList.toggle("dark-mode")
 })
