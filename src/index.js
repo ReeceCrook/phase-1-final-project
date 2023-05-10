@@ -31,10 +31,13 @@ form.addEventListener('submit', (e) => {
 
 searchDropdown.addEventListener('change', () => {
   const p = document.querySelector('.dropText')
+  const searchText = document.querySelector('#search')
   if (searchDropdown.value === searchDropdown[0].value) {
     p.textContent = 'Your search will return Shows/Movies'
+    searchText.placeholder = "Your Show/Movie here"
   } else {
     p.textContent = 'Your search will return Actors/Actresses'
+    searchText.placeholder = "Your Actor/Actresses here"
   }
 })
 
