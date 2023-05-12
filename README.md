@@ -12,6 +12,8 @@ To use the Film Finder you simply click "Home", choose what type of search you w
 
 ![image](Gifs/webAppWalkthrough.gif)
 
+>If you would like a more detailed Walkthrough please watch this video: [link](https://youtu.be/B-4d4v-hldo)
+
 ## Credits
 
 My Film Finder was make using: \

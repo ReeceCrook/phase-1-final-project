@@ -5,8 +5,7 @@ const searchDropdown = document.querySelector('#searchDropdown')
 const resultContainer = document.querySelector('.resultContainer')
 
 darkMode.addEventListener("click", function(){
-  const body = document.body
-  body.classList.toggle("dark-mode")
+  document.body.classList.toggle("dark-mode")
 })
 
 form.addEventListener('submit', (e) => {
@@ -115,7 +114,7 @@ function renderSearch(data){
       <div class="content">
         <a href="${data.person.url}">"${data.person.name}"</a>
         <p>
-          Country: ${data.person.country.name}<br>Birthday: ${data.person.birthday}
+          Country: ${data.person.country.name} <br> Birthday: ${data.person.birthday}
         </p>
       </div>
       `
