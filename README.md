@@ -1,5 +1,7 @@
 # My Film Finder ReadMe
 
+Welcome to my Film Finder, a great place to find Films and those related.
+
 ## Description
 
 My Film Finder WebApp is very useful for people like myself who like all kinds of Shows/Movies and want to save stuff to watch another time or for those who just want to find a film/the people in a film.
