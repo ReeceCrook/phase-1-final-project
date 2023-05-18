@@ -46,11 +46,6 @@ function dropDownHandler(event, name){
     tabcontent[i].style.display = 'none'
   }
 
-  const tablinks = document.getElementsByClassName('tablinks')
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace('active', '')
-  }
-
   document.getElementById(name).style.display = 'block'
   event.currentTarget.className += ' active'
 }
